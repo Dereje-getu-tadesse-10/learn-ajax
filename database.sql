@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : dim. 17 avr. 2022 à 19:36
+-- Généré le : dim. 17 avr. 2022 à 22:20
 -- Version du serveur : 5.7.34
 -- Version de PHP : 7.4.21
 
@@ -24,23 +24,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `table_user`
+-- Structure de la table `users`
 --
 
-CREATE TABLE `table_user` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `user_first_name` varchar(255) NOT NULL,
-  `user_last_name` varchar(255) NOT NULL
+  `prenom` varchar(255) NOT NULL,
+  `nom` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `prenom`, `nom`) VALUES
+(1, 'dede', 'champs'),
 --
 -- Index pour les tables déchargées
 --
 
 --
--- Index pour la table `table_user`
+-- Index pour la table `users`
 --
-ALTER TABLE `table_user`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -48,10 +54,10 @@ ALTER TABLE `table_user`
 --
 
 --
--- AUTO_INCREMENT pour la table `table_user`
+-- AUTO_INCREMENT pour la table `users`
 --
-ALTER TABLE `table_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
