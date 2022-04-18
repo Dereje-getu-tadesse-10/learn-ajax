@@ -7,6 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    
+<?php
+
+$bd= new PDO('mysql:host=localhost;dbname=db_icy', 'root', 'root');
+$getUsers = $bd->query('SELECT * FROM users');
+while ($getd = $getUsers->fetch(PDO::FETCH_ASSOC)) 
+{
+   ?>
+   <div>
+        <h1><?= $getd['prenom']; ?></h1>
+        <p><?= $getd['nom']; ?></p>
+        <a href="edit-page.php" id=" id="<?= $getd['id']; ?>">Edit</a>
+        <button class="btn" id="<?= $getd['id']; ?>">Delete</button>       
+    </div> 
+    <?php
+}
+?>
 </body>
 </html>
